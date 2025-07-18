@@ -95,7 +95,7 @@ function PeacockFeather({
   const xWig = useRef(xWiggle);
   const clonedScene = scene.clone();
 
-  useFrame((state, delta) => {
+  useFrame((_state, delta) => {
     if (group.current) {
         if (yWig.current) {
             yWig.current.phase += delta * yWig.current.frequency;
