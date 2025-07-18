@@ -22,6 +22,19 @@ function App() {
     });
   }, []);
 
+  useEffect(() => {
+    const titleText = "dhyey 😝 rocks 🤘🏽";
+    let currentIndex = 0;
+    
+    const interval = setInterval(() => {
+      const rotatedText = titleText.slice(currentIndex) + titleText.slice(0, currentIndex);
+      document.title = rotatedText;
+      currentIndex = (currentIndex + 1) % titleText.length;
+    }, 200);
+
+    return () => clearInterval(interval);
+  }, []);
+
   return (
     <main>
       <Scene />
